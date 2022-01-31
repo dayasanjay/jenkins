@@ -905,40 +905,40 @@ Script
 ---------
 node('master')
 
-{
+{<br>
 
-stage('Continuous Download') 
+stage('Continuous Download')<br> 
    
-	 {
+	 {<br>
 	
-    git 'https://github.com/sunildevops77/maven.git'
+    git 'https://github.com/sunildevops77/maven.git'<br>
     
-	}
+	}<br>
 
-stage('Continuous build') 
+stage('Continuous build')<br> 
    
-	 {
+	 {<br>
 	
-   sh label: '', script: 'mvn package'
-	}
+   sh label: '', script: 'mvn package'<br>
+	}<br>
 
-stage('Continuous Deployment') 
+stage('Continuous Deployment')<br> 
    
-	 {
+	 {<br>
 	
- sh label: '', script: 'scp  /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war  ubuntu@172.31.21.16:/var/lib/tomcat8/webapps/qaenv.war'
-	}
-stage('Continuous Testing') 
+ sh label: '', script: 'scp  /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war  ubuntu@172.31.21.16:/var/lib/tomcat8/webapps/qaenv.war'<br>
+	}<br>
+stage('Continuous Testing')<br> 
    
-	 {
-	sh label: '', script: 'echo "Testing Passed"'
-	}
-stage('Continuous Delivery') 
+	 {<br>
+	sh label: '', script: 'echo "Testing Passed"'<br>
+	}<br>
+stage('Continuous Delivery')<br> 
    
-	 {
-	sh label: '', script: 'scp  /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war  ubuntu@172.31.28.16:/var/lib/tomcat8/webapps/prodenv.war'
-	}
-}
+	 {<br>
+	sh label: '', script: 'scp  /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war  ubuntu@172.31.28.16:/var/lib/tomcat8/webapps/prodenv.war'<br>
+	}<br>
+}<br>
 
 
 
