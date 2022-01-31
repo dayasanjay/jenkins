@@ -903,6 +903,7 @@ http://13.126.45.247:8080/prodenv/
 
 ### Script
 ---------
+{
 node('master')
 {
        stage('Continuous Download')
@@ -926,4 +927,5 @@ node('master')
              {
 	sh label: '', script: 'scp  /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war  ubuntu@172.31.28.16:/var/lib/tomcat8/webapps/prodenv.war'
 	     }
+}
 }
